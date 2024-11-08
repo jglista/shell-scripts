@@ -36,7 +36,7 @@ function check_go_install() {
     if [ -d /usr/local/go ]; then
         echo "Go is already installed on your system. Do you want to update it?"
         read -p "Enter y/n: " response
-        if [ $response == "y" ]; then
+        if [ $response == "y" ] || [$response == ""]; then
             echo "Removing go..."
             clean_go_install
             echo "Go has been removed from your system"
